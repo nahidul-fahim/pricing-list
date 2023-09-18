@@ -20,7 +20,7 @@ const NavBar = () => {
             {/* Website logo */}
 
             <div>
-                <h1 className="text-3xl font-bold text-[gray]">JYM - Z</h1>
+                <h1 className="text-3xl font-bold text-[gray]">GYM - Z</h1>
             </div>
 
             {/* Nav bar */}
@@ -32,7 +32,7 @@ const NavBar = () => {
                     }
                 </div>
 
-                <ul className={`flex flex-col lg:flex-row gap-x-10 gap-y-6 font-semibold text-center lg:text-left bg-[#360404] lg:bg-white text-white lg:text-[gray] py-10 px-10 lg:p-0 rounded-lg duration-1000 mt-5 lg:static absolute ${open ? '-top-[500px] right-5': 'top-10 right-5'}`}>
+                <ul className={`flex flex-col lg:flex-row gap-x-7 gap-y-6 font-semibold text-center lg:text-left bg-[#360404] lg:bg-white text-white lg:text-[gray] py-6 lg:py-0 rounded-lg duration-1000 mt-5 lg:mt-0 lg:static absolute ${open ? '-top-[500px] right-5': 'top-10 right-5'}`}>
                     {
                         navBarOptions.map((navItems, idx) => <NavItems
                             key={idx}
