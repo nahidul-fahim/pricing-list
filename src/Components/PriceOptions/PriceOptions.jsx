@@ -46,14 +46,16 @@ const PriceOptions = () => {
 
     return (
         <div className="mt-20">
-            <h2 className="text-5xl font-bold">Best Prices in The Town</h2>
-            {
-                priceOptions.map((option, idx) => <PriceOption
-                key={idx}
-                option={option}>
+            <h2 className="text-5xl font-bold text-center">Best Prices in The Town</h2>
+            <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 ">
+                {
+                    priceOptions.map((option, idx) => <PriceOption
+                        key={idx}
+                        option={option}>
 
-                </PriceOption>)
-            }
+                    </PriceOption>)
+                }
+            </div>
         </div>
     );
 };
