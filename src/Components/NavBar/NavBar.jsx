@@ -12,25 +12,36 @@ const navBarOptions = [
 
 const NavBar = () => {
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     return (
-        <nav>
-            <div onClick={() => setOpen(!open)} className="text-3xl">
-                {
-                    open === true ? <HiMenu /> : <HiX />
-                }
-                
+        <nav className="flex justify-between items-start">
+
+            {/* Website logo */}
+
+            <div>
+                <h1 className="text-3xl font-bold text-[gray]">JYM - Z</h1>
             </div>
 
-            <ul className="flex gap-x-10 font-semibold">
-                {
-                    navBarOptions.map((navItems, idx) => <NavItems
-                        key={idx}
-                        navItems={navItems}
-                    ></NavItems>)
-                }
-            </ul>
+            {/* Nav bar */}
+
+            <div>
+                <div onClick={() => setOpen(!open)} className="text-3xl flex justify-end items-center lg:hidden">
+                    {
+                        open === true ? <HiMenu /> : <HiX />
+                    }
+                </div>
+
+                <ul className={`flex flex-col lg:flex-row gap-x-10 gap-y-6 font-semibold text-center lg:text-left bg-[#360404] lg:bg-white text-white lg:text-[gray] py-10 px-10 lg:p-0 rounded-lg duration-1000 mt-5 lg:static absolute ${open ? '-top-[500px] right-5': 'top-10 right-5'}`}>
+                    {
+                        navBarOptions.map((navItems, idx) => <NavItems
+                            key={idx}
+                            navItems={navItems}
+                        ></NavItems>)
+                    }
+                </ul>
+            </div>
+
         </nav>
     );
 };
